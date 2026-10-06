@@ -63,6 +63,22 @@ class User extends Authenticatable
     }
 
     /**
+     * Check if user has admin role.
+     */
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin';
+    }
+
+    /**
+     * Check if user has regular user (pengguna) role.
+     */
+    public function isUser(): bool
+    {
+        return $this->role === 'user';
+    }
+
+    /**
      * Allow setting password using standard ->password attribute.
      */
     public function setPasswordAttribute(string $value): void
